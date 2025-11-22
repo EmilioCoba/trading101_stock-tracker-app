@@ -60,7 +60,14 @@ const SignUp = () => {
                     placeholder="contact@example.com"
                     register={register}
                     error={errors.email}
-                    validation={{ required: 'Email is required', pattern: /^\w+@\w+$/ ,message: 'Email is required' }}
+                    validation={{
+                        required: 'Email is required',
+                        pattern: {
+                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                            message: 'Please enter a valid email address',
+                        },
+
+                }}
                 />
                 <InputField
                     name="password"
@@ -99,15 +106,16 @@ const SignUp = () => {
                 required
                 />
 
-                <SelectField
-                name="prefferedIndustry"
-                label="Preffered Industry"
-                placeholder="Select your preffered Industry"
-                options={PREFERRED_INDUSTRIES}
-                control={control}
-                error={errors.preferredIndustry}
-                required
-                />
+
+                  <SelectField
+                      name="preferredIndustry"
+                      label="Preferred Industry"
+                      placeholder="Select your preferred industry"
+                      options={PREFERRED_INDUSTRIES}
+                      control={control}
+                      error={errors.preferredIndustry}
+                      required
+                              />
 
                 <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
                     {isSubmitting ? 'Creating Account' : 'Start Your Investing Journey'}

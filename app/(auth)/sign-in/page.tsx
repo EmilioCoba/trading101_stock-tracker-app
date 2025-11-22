@@ -13,7 +13,7 @@ const SignIn = () => {
         handleSubmit,
 
         formState: { errors, isSubmitting },
-    } = useForm<SignUpFormData>({
+    } = useForm<SignInFormData>({
         defaultValues: {
 
             email: '',
@@ -23,7 +23,7 @@ const SignIn = () => {
         mode: 'onBlur'
     }, );
 
-    const onSubmit = async (data: SignUpFormData) => {
+    const onSubmit = async (data: SignInFormData) => {
         try {
             console.log(data)
         } catch (e) {
@@ -43,7 +43,11 @@ const SignIn = () => {
                     placeholder="Enter your email"
                     register={register}
                     error={errors.email}
-                    validation={{ required: 'Email is required', pattern: /^\w+@\w+\.\w+$/ }}
+                    validation={{ required: 'Email is required', pattern: {
+                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                            message: 'Please enter a valid email address',
+                        },
+                    }}
                 />
 
                 <InputField

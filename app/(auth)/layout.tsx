@@ -22,7 +22,7 @@ const Layout = ({children}:{children:React.ReactNode}) => {
                         The alerts are spot-on, and I feel more confident
                         making moves in the market.
                     </blockquote>
-                    <div className="flex itmes-center justify-between" >
+                    <div className="flex items-center justify-between" >
                         <div>
 
                         <cite className="auth-testimonial-author">- Ethan R.</cite>

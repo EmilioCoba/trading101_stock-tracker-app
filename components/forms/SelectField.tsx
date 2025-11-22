@@ -20,6 +20,7 @@ const SelectField = ({ name, label, placeholder, options, control, error, requir
                     required: required ? `Please select ${label.toLowerCase()}` : false,
                 }}
                 render={({ field }) => (
+                    <>
                     <Select value={field.value} onValueChange={field.onChange}>
                         <SelectTrigger className="select-trigger">
                             <SelectValue placeholder={placeholder} />
@@ -31,8 +32,9 @@ const SelectField = ({ name, label, placeholder, options, control, error, requir
                                 </SelectItem>
                             ))}
                         </SelectContent>
-                        {error && <p className="text-sm text-red-500">{error.message}</p>}
                     </Select>
+                        {error && <p className="text-sm text-red-500">{error.message}</p>}
+                    </>
                 )}
             />
         </div>
