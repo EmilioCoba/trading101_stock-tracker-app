@@ -34,7 +34,7 @@ const SignIn = () => {
             if(result.success)router.push("/");
         } catch (e) {
             console.error(e);
-            toast.error('Sign ip failed!',{
+            toast.error('Sign in failed!',{
                 description: e instanceof Error ? e.message : "Failed to sign in",
             });
 
