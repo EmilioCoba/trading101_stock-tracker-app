@@ -21,8 +21,8 @@ const SignIn = () => {
     } = useForm<SignInFormData>({
         defaultValues: {
 
-            email: '',
-            password: '',
+            email: 'aimilio.example@gmail.com',
+            password: 'pass1234',
 
         },
         mode: 'onBlur'
